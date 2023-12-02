@@ -1,4 +1,6 @@
 <script lang="ts">
+  import Navbar from "$lib/Navbar.svelte"
+
   let title: string = "Ninja Gaming Guides"
 
   let input: string = ""
@@ -9,8 +11,8 @@
 
 <div class="index">
   <h2>{title ? title : "Some title"}</h2>
-  <input type="text" bind:value={input}>
-  <button on:click={()=>updateTitle(input)}>Update title</button>
+  <input type="text" bind:value={input} />
+  <button on:click={() => updateTitle(input)}>Update title</button>
   <p>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quod
     accusantium aspernatur error harum, quisquam optio qui. Neque, ratione
@@ -29,10 +31,9 @@
   button {
     max-width: 200px;
     margin: 0 auto;
-}
-input {
-      max-width: 300px;
-      margin: 1rem auto;
-    
+  }
+  input {
+    max-width: 300px;
+    margin: 1rem auto;
   }
 </style>
