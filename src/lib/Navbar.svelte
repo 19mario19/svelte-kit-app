@@ -28,9 +28,10 @@
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 1rem;
-  }
-  .left {
+}
+.left {
     display: flex;
+    align-items: center;
     gap: 1rem;
   }
   img {
