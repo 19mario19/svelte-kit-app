@@ -1,18 +1,38 @@
 <script lang="ts">
-    interface Person {
-        name: string,
-        age: number
-    }
+  let title: string = "Ninja Gaming Guides"
 
-    let person : Person 
-    person = {
-        name: "Alina",
-        age: 22,
-    }
+  let input: string = ""
+  function updateTitle(input: string): void {
+    title = input || "No title"
+  }
 </script>
 
-<h1>Welcome to SvelteKit</h1>
-<div class="person">
-    <p>{person.name} - {person.age}</p>
+<div class="index">
+  <h2>{title ? title : "Some title"}</h2>
+  <input type="text" bind:value={input}>
+  <button on:click={()=>updateTitle(input)}>Update title</button>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quod
+    accusantium aspernatur error harum, quisquam optio qui. Neque, ratione
+    cupiditate?
+  </p>
 </div>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+
+<style>
+  .index {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 3rem auto;
+  }
+
+  button {
+    max-width: 200px;
+    margin: 0 auto;
+}
+input {
+      max-width: 300px;
+      margin: 1rem auto;
+    
+  }
+</style>
